@@ -1,0 +1,150 @@
+
+/* --- 1. CORE STYLES (Keep exactly as they are) --- */
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #eee4e1; 
+    color: #4a4a4a; 
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #b2967d, #e6beae);  
+    color: white; 
+    padding: 60px 20px; 
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* --- 2. THE COLLAPSING NAVIGATION --- */
+nav {
+    background-color: rgba(230, 190, 174, 0.9);
+    padding: 15px; 
+    display: flex;            
+    justify-content: center;   
+    flex-wrap: wrap; /* This allows items to drop to the next line */         
+    gap: 15px;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #b2967d;
+}
+
+nav a { 
+    color: #5d4037; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+/* --- 3. THE COLLAPSING MAIN CONTAINER --- */
+main {
+    width: 90%; /* Standard behavior: take up 90% of screen */
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(178, 150, 125, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative; /* For the floating profile pic */
+}
+
+/* --- 4. THE SIDE-BY-SIDE TO UP-AND-DOWN COLLAPSE --- */
+
+/* Grid Collapse (Service Cards, Lab Grids) */
+.services-container, .lab-grid, .service-grid {
+    display: grid;             
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Automatically stacks when space is tight */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Video Card Collapse (Removing the float for mobile) */
+.mini-video-card {
+    background-color: #f7ece8;
+    padding: 15px;
+    border: 1px solid #e6beae;
+    border-radius: 12px;
+    width: 250px;
+    float: right; /* Side-by-side on desktop */
+    margin: 0 0 20px 20px;
+    text-align: center;
+}
+
+/* Table Responsiveness (Adds a scrollbar so it doesn't break the page) */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* --- 5. THE "STACKING" RULES (Media Queries) --- */
+
+@media screen and (max-width: 768px) {
+    /* Stop floating the video card so it stacks up-and-down */
+    .mini-video-card {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    /* Shrink the header text for mobile */
+    h1 { font-size: 2rem !important; }
+    
+    /* Make main content fill more of the small screen */
+    main {
+        width: 95%;
+        padding: 25px 15px;
+        margin-top: 80px;
+    }
+
+    /* Stack the profile pic animation correctly */
+    .profile-pic {
+        width: 110px !important;
+        height: 110px !important;
+        top: -55px !important;
+    }
+}
+
+/* Fix for profile pic positioning */
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 5px solid white;
+    position: absolute;
+    top: -65px; 
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -8px); }
+    100% { transform: translate(-50%, 0); }
+}
+
+footer { 
+    background-color: #b2967d; 
+    color: white; 
+    text-align: center; 
+    padding: 30px; 
+    margin-top: 40px; 
+}
+
+footer a { color: white; text-decoration: none; }

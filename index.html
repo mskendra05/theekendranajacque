@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kendra Najacque | Home</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico" type="x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --header-grad-start: #b2967d;
+            --header-grad-end: #e6beae;
+            --text-brown: #5d4037;
+            --cream-bg: #f7ece8;
+            --aura-1: #eee4e1;
+            --aura-2: #fdfafb;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(-45deg, var(--aura-1), var(--aura-2), var(--header-grad-end), #f5ebe0);
+            background-size: 400% 400%;
+            animation: auraGradient 15s ease infinite;
+            color: #4a4a4a; 
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes auraGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Slimmer Header */
+        header {
+            background: linear-gradient(135deg, var(--header-grad-start), var(--header-grad-end));  
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem; /* Reduced size */
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .status-container {
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: rgba(230, 190, 174, 0.9);
+            padding: 12px; 
+            display: flex;            
+            justify-content: center;   
+            flex-wrap: wrap;          
+            gap: 20px;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--header-grad-start);
+        }
+
+        nav a { 
+            color: var(--text-brown); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover { 
+            color: white;
+            background-color: var(--header-grad-start);
+            border-radius: 20px;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1000px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(178, 150, 125, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative; /* Essential for the "sticker" effect */
+            flex-grow: 1;
+        }
+
+        h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--text-brown); }
+
+        #dynamic-role {
+            font-weight: 700;
+            color: var(--text-brown);
+            border-bottom: 3px solid var(--header-grad-end);
+        }
+
+        /* The Vibe Card - Positioned like a sticker on the bottom-right corner */
+        .vibe-card {
+            background-color: #ffffff;
+            padding: 10px;
+            border: 1px solid var(--header-grad-end);
+            border-radius: 8px;
+            box-shadow: 8px 8px 0px var(--header-grad-start);
+            width: 180px; /* Slightly smaller to fit corner better */
+            position: absolute;
+            bottom: -20px; /* Overhangs the bottom edge */
+            right: -20px;  /* Overhangs the right edge */
+            text-align: center;
+            transform: rotate(3deg);
+            z-index: 10;
+        }
+
+        .video-frame {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: none;
+        }
+
+        /* Slimmer Footer */
+        footer { 
+            background-color: var(--header-grad-start); 
+            color: white; 
+            text-align: center; 
+            padding: 20px 20px; 
+            margin-top: 40px; 
+        }
+
+        footer a { color: white; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            /* On mobile, scooch it back inside so it doesn't get cut off by screen edge */
+            .vibe-card { 
+                position: static; 
+                margin: 40px auto 0 auto; 
+                width: 100%; 
+                transform: none; 
+            }
+            main { padding: 30px; margin: 15px auto; width: 95%; }
+        }
+        .profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: float 4s ease-in-out infinite;
+    position: absolute;
+    top: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+@keyframes float {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kendra Najacque</h1>
+        <div class="status-container">
+            SYSTEM_STATUS: ONLINE // <span id="greeting">...</span> // <span id="live-date"></span>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="communityservice.html">Community Service</a>
+        <a href="relevantcoursework.html">Relevant Coursework</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <img src="finalpic.png" class="profile-pic top-center">
+        <h2>Welcome!</h2>
+        <p style="font-size: 1.2rem;">
+            I am a <span id="dynamic-role">Sophomore IT Student</span>
+        </p>
+        <div style="max-width: 700px;">
+            <p>
+                I am a student at Georgia Southern University with a passion for IT and learning. This portfolio is a collection of my technical journey, community involvement, and professional growth.
+            </p>
+            <p>
+                Explore my work to see how I combine analytical problem-solving with a drive for excellence.
+            </p>
+        </div>
+
+        <div class="vibe-card">
+            <p style="margin: 0 0 5px 0; font-size: 0.6rem; font-weight: 800; color: var(--header-grad-start); text-transform: uppercase;">Current Vibe 🎵</p>
+            <div class="video-frame">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N3ur5Ey21zg?si=pMZxj92FXlvu7qw_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            </div>
+        </div>
+
+        <img src="yourp.jpg" class="profile-pic">
+    </main>
+   
+    <footer>
+        <i> <small> 
+            Copyright &copy; 2026 Kendra Najacque <br>
+            <a href="mailto:kn08089@georgiasouthern.edu">kn08089@georgiasouthern.edu</a>
+        </small> </i>
+    </footer>
+
+    <script>
+        function updateStatus() {
+            const hour = new Date().getHours();
+            const greet = hour < 12 ? "MORNING" : hour < 18 ? "AFTERNOON" : "EVENING";
+            document.getElementById('greeting').textContent = "GOOD " + greet;
+            document.getElementById('live-date').textContent = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' });
+        }
+
+        const roles = ["Sophomore IT Student", "Future IT Expert", "4.0 GPA Achiever", "QA Automation Enthusiast"];
+        let roleIndex = 0;
+        function rotateRole() {
+            roleIndex = (roleIndex + 1) % roles.length;
+            const el = document.getElementById('dynamic-role');
+            if(el) el.textContent = roles[roleIndex];
+        }
+
+        window.onload = function() {
+            updateStatus();
+            setInterval(rotateRole, 3500);
+        };
+    </script>
+</body>
+</html>

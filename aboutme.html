@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kendra Najacque | About</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico" type="x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --header-grad-start: #b2967d;
+            --header-grad-end: #e6beae;
+            --text-brown: #5d4037;
+            --aura-1: #eee4e1;
+            --aura-2: #fdfafb;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(-45deg, var(--aura-1), var(--aura-2), var(--header-grad-end), #f5ebe0);
+            background-size: 400% 400%;
+            animation: auraGradient 15s ease infinite;
+            color: #4a4a4a; 
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes auraGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-grad-start), var(--header-grad-end));  
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: rgba(230, 190, 174, 0.9);
+            padding: 12px; 
+            display: flex;            
+            justify-content: center;   
+            gap: 20px;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--header-grad-start);
+        }
+
+        nav a { 
+            color: var(--text-brown); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover { 
+            color: white;
+            background-color: var(--header-grad-start);
+            border-radius: 20px;
+        }
+
+        main {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(178, 150, 125, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 { 
+            font-size: 2.2rem; 
+            margin-bottom: 20px; 
+            color: var(--text-brown); 
+            font-weight: 300;
+        }
+
+        .bio-p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        /* Widened Bento Grid - Force 2 columns */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .bento-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--header-grad-end);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
+        }
+
+        .bento-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(178, 150, 125, 0.15);
+            border-color: var(--header-grad-start);
+        }
+
+        .bento-item h4 {
+            margin: 0 0 12px 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--header-grad-start);
+        }
+
+        .bento-item p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-brown);
+        }
+
+        .facts-container {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+        }
+
+        .fact-list {
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .fact-list li {
+            padding: 10px 0;
+            font-size: 0.95rem;
+            color: var(--text-brown);
+            border-bottom: 1px solid rgba(178, 150, 125, 0.1);
+            transition: padding-left 0.3s ease;
+        }
+
+        .fact-list li:hover {
+            padding-left: 10px;
+            color: var(--header-grad-start);
+        }
+
+        footer { 
+            background-color: var(--header-grad-start); 
+            color: white; 
+            text-align: center; 
+            padding: 20px 20px; 
+            margin-top: 40px; 
+        }
+
+        footer a { color: white; }
+
+        @media (max-width: 600px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            main { padding: 30px; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="aura.css"></head>
+
+<body>
+
+    <header>
+        <h1>Kendra Najacque</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="communityservice.html">Community Service</a>
+        <a href="relevantcoursework.html">Relevant Coursework</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>About Me</h2>
+        
+        <p class="bio-p">
+            I am a Haitian-American, born and raised in Hampton, Virginia, and a proud Georgia resident since 2015. Growing up as the middle child of 7 in a "nomad" household, I learned early on that adaptability is a superpower. Moving frequently between Virginia, Florida, and Georgia shaped my ability to find my footing anywhere.
+        </p>
+        
+        <p class="bio-p">
+            Despite the changes in scenery, my commitment to excellence remained anchored. I live by the philosophy that <b>trying is the goal and giving up is not an option</b>. This drive for "anything but ordinary" is what I carry into my technical career in Information Technology.
+        </p>
+
+        <div class="bento-grid">
+            <div class="bento-item">
+                <h4>Roots</h4>
+                <p>Haitian-American // Virginia & Georgia Resident</p>
+            </div>
+            <div class="bento-item">
+                <h4>Wanderlust</h4>
+                <p>Aspiring to visit Brazil, Barbados, and China.</p>
+            </div>
+            <div class="bento-item">
+                <h4>Interests</h4>
+                <p>Mystery Thrillers & Reading.</p>
+            </div>
+            <div class="bento-item">
+                <h4>Milestone</h4>
+                <p>Tybee Island Beach Trip, 2024 🌊</p>
+            </div>
+        </div>
+
+        <div class="facts-container">
+            <h3 style="color: var(--header-grad-start); margin-top: 0;">Quick Facts</h3>
+            <ul class="fact-list">
+                <li>✦ I’ve lived in Georgia for over 11 years now.</li>
+                <li>✦ My favorite way to relax is getting lost in a good TV show.</li>
+                <li>✦ I am a Scorpio (born November 16th).</li>
+                <li>✦ I value discipline and high academic standards above all else.</li>
+            </ul>
+        </div>
+    </main>
+   
+    <footer>
+        <i> <small> 
+            Copyright &copy; 2026 Kendra Najacque <br>
+            <a href="mailto:kn08089@georgiasouthern.edu">kn08089@georgiasouthern.edu</a>
+        </small> </i>
+    </footer>
+
+</body>
+</html>

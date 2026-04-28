@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kendra Najacque | Coursework</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="x-icon">
+    <link rel="stylesheet" href="aura.css">
+    <style>
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--header-grad-end);
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .gallery-item.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(178, 150, 125, 0.2);
+            border-color: var(--header-grad-start);
+        }
+
+        /* Styles for the clickable image link */
+        .img-link {
+            display: block;
+            cursor: zoom-in;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            background: white;
+        }
+
+        .tag-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #eee4e1;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #5d4037;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-gallery {
+                grid-template-columns: 1fr;
+            }
+            main { padding: 30px; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Kendra Najacque</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="communityservice.html">Community Service</a>
+        <a href="relevantcoursework.html">Relevant Coursework</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Technical Coursework</h2>
+        <p style="max-width: 800px; margin-bottom: 20px;">
+            My academic journey in Information Technology is defined by turning abstract logic into functional, secure applications. Below is a visual look at the projects and environments where I apply my technical skills. Click any image to view it full size.
+        </p>
+
+        <div id="gallery" class="portfolio-gallery"></div>
+    </main>
+   
+    <footer>
+        <i> <small> 
+            Copyright &copy; 2026 Kendra Najacque <br>
+            <a href="mailto:kn08089@georgiasouthern.edu" style="color:white; text-decoration:none;">kn08089@georgiasouthern.edu</a>
+        </small> </i>
+    </footer>
+
+    <script>
+        const projects = [
+            {
+                title: "PHP & Backend Integration",
+                description: "Explored server-side scripting by configuring PHP environments and managing dynamic web content through backend modifications.",
+                img: "phplab.png",
+                tags: ["PHP", "Backend", "Web Config"]
+            },
+            {
+                title: "Multiboot USB Configuration",
+                description: "Utilized YUMI and VMware Workstation Pro to create bootable drives featuring portable security tools, antivirus, and Ubuntu environments.",
+                img: "yumi.png",
+                tags: ["YUMI", "Virtualization", "ISO Management"]
+            },
+            {
+                title: "Windows Server Administration",
+                description: "Provisioned and managed Server Roles within Active Directory using VMware, including DNS and File & Storage Services configuration.",
+                img: "server.png", 
+                tags: ["Active Directory", "DNS", "Windows Server"]
+            },
+            {
+                title: "CMS Management & Backup",
+                description: "Managed Joomla CMS instances via Localhost environments, focusing on database backups and PHP environment stability.",
+                img: "joomla.png", 
+                tags: ["Joomla", "Localhost", "Database Backup"]
+            }
+        ];
+
+        function renderGallery() {
+            const gallery = document.getElementById('gallery');
+            // Updated template to wrap the <img> in an <a> tag
+            gallery.innerHTML = projects.map((item, index) => `
+                <div class="gallery-item" style="transition-delay: ${index * 0.1}s">
+                    <a href="${item.img}" target="_blank" class="img-link" title="Click to view full image">
+                        <img src="${item.img}" alt="${item.title}">
+                    </a>
+                    <div class="gallery-caption">
+                        <h3 style="color: #5d4037; margin: 0 0 8px 0;">${item.title}</h3>
+                        <p style="margin: 0; font-size: 0.9rem; color: #777;">${item.description}</p>
+                        <div class="tag-row">
+                            ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            setTimeout(() => {
+                const items = document.querySelectorAll('.gallery-item');
+                items.forEach(item => item.classList.add('reveal'));
+            }, 100);
+        }
+
+        window.onload = renderGallery;
+    </script>
+</body>
+</html>

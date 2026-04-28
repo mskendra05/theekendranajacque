@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kendra Najacque | Resume</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico" type="x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --header-grad-start: #b2967d;
+            --header-grad-end: #e6beae;
+            --text-brown: #5d4037;
+            --aura-1: #eee4e1;
+            --aura-2: #fdfafb;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(-45deg, var(--aura-1), var(--aura-2), var(--header-grad-end), #f5ebe0);
+            background-size: 400% 400%;
+            animation: auraGradient 15s ease infinite;
+            color: #4a4a4a; 
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes auraGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-grad-start), var(--header-grad-end));  
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: rgba(230, 190, 174, 0.9);
+            padding: 12px; 
+            display: flex;            
+            justify-content: center;   
+            gap: 20px;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--header-grad-start);
+        }
+
+        nav a { 
+            color: var(--text-brown); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover { 
+            color: white;
+            background-color: var(--header-grad-start);
+            border-radius: 20px;
+        }
+
+        main {
+            max-width: 1000px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(178, 150, 125, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 { 
+            font-size: 2.2rem; 
+            margin-bottom: 25px; 
+            color: var(--text-brown); 
+            font-weight: 300;
+        }
+
+        .resume-viewer {
+            width: 100%;
+            height: 850px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--header-grad-end);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+            margin-bottom: 35px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--header-grad-start);
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: var(--text-brown);
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        footer { 
+            background-color: var(--header-grad-start); 
+            color: white; 
+            text-align: center; 
+            padding: 20px 20px; 
+            margin-top: 40px; 
+        }
+
+        footer a { color: white; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .resume-viewer { height: 500px; }
+            main { padding: 30px; margin: 15px auto; width: 95%; }
+        }
+    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="aura.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kendra Najacque</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="communityservice.html">Community Service</a>
+        <a href="relevantcoursework.html">Relevant Coursework</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Professional Resume</h2>
+        
+        <div class="resume-viewer">
+            <iframe
+                src="correctresume.pdf"
+                width="100%"
+                height="100%"
+                style="border: none;">
+            </iframe>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="correctresume.pdf" download class="download-btn">Download PDF Copy</a>
+        </div>
+    </main>
+   
+    <footer>
+        <i> <small> 
+            Copyright &copy; 2026 Kendra Najacque <br>
+            <a href="mailto:kn08089@georgiasouthern.edu">kn08089@georgiasouthern.edu</a>
+        </small> </i>
+    </footer>
+
+</body>
+</html>
